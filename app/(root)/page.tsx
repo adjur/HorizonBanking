@@ -4,7 +4,7 @@ import TotalBalanceBox from '@/components/ui/TotalBalanceBox'
 
 
 const Home = () => {
-    const loggedIn = { firstName: 'Andi', lastName: 'JSM', email: 'test@gmail.com' }
+    const loggedIn = { firstName: 'Andi', lastName: 'Dj', email: 'test@gmail.com' }
 
     return (
         <section className='home'>
