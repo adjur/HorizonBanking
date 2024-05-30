@@ -10,11 +10,11 @@ import { authFormSchema } from '@/lib/utils'
 import SignIn from '@/app/(auth)/sign-in/page';
 import SignUp from '@/app/(auth)/sign-up/page'
 
-// const formSchema = authFormSchema('sign-up')
+const formSchema = authFormSchema('sign-up')
 
 interface CustomInput {
-    control: Control<z.infer<typeof authFormSchema>>,
-    name: FieldPath<z.infer<typeof authFormSchema>>,
+    control: Control<z.infer<typeof formSchema>>,
+    name: FieldPath<z.infer<typeof formSchema>>,
     label: string,
     placeholder: string
 }
