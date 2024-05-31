@@ -19,9 +19,9 @@ const RecentTransactions = () => {
                         <TabsTrigger className='bg-[#f9fafb]' value="Checkings">Checkings</TabsTrigger>
                         <TabsTrigger className='bg-[#f9fafb]' value="Savings">Savings</TabsTrigger>
                     </TabsList>
-                    <TabsContent value="Checkings"><RTTable />
+                    <TabsContent className='space-y-4' value="Checkings"><RTTable />
                     </TabsContent>
-                    <TabsContent value="Savings"><RTTableSavings />
+                    <TabsContent className='space-y-4' value="Savings"><RTTableSavings />
                     </TabsContent>
                 </Tabs>
 
