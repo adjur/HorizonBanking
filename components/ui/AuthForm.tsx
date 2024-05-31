@@ -94,15 +94,17 @@ const AuthForm = ({ type }: { type: string }) => {
 
                             <CustomInput control={form.control} name='password' label="Password" placeholder='Enter your password' />
                             <div className='flex flex-col gap-4'>
-                                <Button type="submit" disabled={isLoading} className="form-btn">
-                                    {isLoading ? (
-                                        <>
-                                            <Loader2 size={20} className="animate-spin" /> &nbsp;
-                                            Loading...
-                                        </>
-                                    ) : type === 'sign-in'
-                                        ? 'Sign In' : 'Sign Up'}
-                                </Button>
+                                <Link href={type === 'sign-in' ? '/' : '/sign-in'} passHref>
+                                    <Button type="button" disabled={isLoading} className="form-btn w-full">
+                                        {isLoading ? (
+                                            <>
+                                                <Loader2 size={20} className="animate-spin" /> &nbsp;
+                                                Loading...
+                                            </>
+                                        ) : type === 'sign-in'
+                                            ? 'Sign In' : 'Sign Up'}
+                                    </Button>
+                                </Link>
                             </div>
                         </form>
                     </Form>
@@ -115,6 +117,9 @@ const AuthForm = ({ type }: { type: string }) => {
                     </footer>
                 </>
             )}
+            <div className='flex justify-center gap-1'>
+                <p className='text-14 font-normal text-black-600'>Please press {type === 'sign-in' ? '"Sign In"' : '"Sign Up"'} to continue demo.</p>
+            </div>
         </section>
     )
 }
