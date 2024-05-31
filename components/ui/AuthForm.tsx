@@ -94,7 +94,7 @@ const AuthForm = ({ type }: { type: string }) => {
 
                             <CustomInput control={form.control} name='password' label="Password" placeholder='Enter your password' />
                             <div className='flex flex-col gap-4'>
-                                <Link href={type === 'sign-in' ? '/' : '/sign-in'} passHref>
+                                <Link href={type === 'sign-in' ? '/' : '/'} passHref>
                                     <Button type="button" disabled={isLoading} className="form-btn w-full">
                                         {isLoading ? (
                                             <>
