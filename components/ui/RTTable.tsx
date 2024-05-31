@@ -1,4 +1,5 @@
 import React from 'react'
+
 import {
     Table,
     TableBody,
@@ -8,51 +9,72 @@ import {
     TableHeader,
     TableRow,
 } from "@/components/ui/table"
-
-// Define possible values for status, method, and companies
-const statuses: Invoice['status'][] = ["Paid", "Pending", "Cancelled"];
-const methods: Invoice['method'][] = ["Credit Card", "PayPal", "Bank Transfer"];
-const companies: string[] = ["Netflix", "SW Gas", "Walmart", "Uber", "Albertsons", "Target", "IKEA", "Google"];
-
-// Helper function to generate random amount
-const getRandomAmount = (): string => `$${(Math.random() * 100).toFixed(2)}`;
-
-// Helper function to generate a list of random invoices
-const generateInvoices = (): Invoice[] => {
-    return Array.from({ length: 10 }, (): Invoice => ({
-        company: companies[Math.floor(Math.random() * companies.length)],
-        status: statuses[Math.floor(Math.random() * statuses.length)],
-        method: methods[Math.floor(Math.random() * methods.length)],
-        amount: getRandomAmount(),
-    }));
-};
+import { bold } from 'colors'
 
 const RTTable = () => {
-    const invoices = generateInvoices(); // Generate random invoices on each render
-
     return (
         <Table>
-            <TableCaption>A list of your recent transactions.</TableCaption>
-            <TableHeader className='bg-[#f9fafb]'>
-                <TableRow>
-                    <TableHead className="px-2">Company</TableHead>
+            <TableHeader className="bg-[#f9fafb]">
+                <TableRow style={{textDecoration: 'underline' }}>
+                    <TableHead className="w-[100px]">Company</TableHead>
                     <TableHead>Status</TableHead>
                     <TableHead>Method</TableHead>
                     <TableHead className="text-right">Amount</TableHead>
                 </TableRow>
             </TableHeader>
             <TableBody>
-                {invoices.map((invoice, index) => (
-                    <TableRow key={index}>
-                        <TableCell className="font-medium">{invoice.company}</TableCell>
-                        <TableCell>{invoice.status}</TableCell>
-                        <TableCell>{invoice.method}</TableCell>
-                        <TableCell className="text-right">- {invoice.amount}</TableCell>
-                    </TableRow>
-                ))}
+                <TableRow>
+                    <TableCell className="font-medium">Southwest Air</TableCell>
+                    <TableCell>Pending</TableCell>
+                    <TableCell>Credit Card</TableCell>
+                    <TableCell className="text-right" style={{ color: '#e41c38' }}>- $487.78</TableCell>
+                </TableRow>
+                <TableRow >
+                    <TableCell className="font-medium">Starbucks Coffee</TableCell>
+                    <TableCell>Paid</TableCell>
+                    <TableCell>Credit Card</TableCell>
+                    <TableCell className="text-right" style={{ color: '#e41c38' }}>- $11.47</TableCell>
+                </TableRow>
+                <TableRow >
+                    <TableCell className="font-medium">Uber</TableCell>
+                    <TableCell>Paid</TableCell>
+                    <TableCell>Credit Card</TableCell>
+                    <TableCell className="text-right" style={{ color: '#e41c38' }}>- $62.00</TableCell>
+                </TableRow>
+                <TableRow >
+                    <TableCell className="font-medium">React Conference 2024</TableCell>
+                    <TableCell>Paid</TableCell>
+                    <TableCell>Credit Card</TableCell>
+                    <TableCell className="text-right" style={{ color: '#e41c38' }}>- $500.00</TableCell>
+                </TableRow>
+                <TableRow >
+                    <TableCell className="font-medium">Freelance Gig</TableCell>
+                    <TableCell>Paid</TableCell>
+                    <TableCell>Direct Deposit</TableCell>
+                    <TableCell className="text-right" style={{ color: 'green' }}>+ $250.00</TableCell>
+                </TableRow>
+                <TableRow>
+                    <TableCell className="font-medium">In n Out Burger</TableCell>
+                    <TableCell>Pending</TableCell>
+                    <TableCell>Credit Card</TableCell>
+                    <TableCell className="text-right" style={{ color: '#e41c38' }}>- $16.34</TableCell>
+                </TableRow>
+                <TableRow>
+                    <TableCell className="font-medium">Best Western</TableCell>
+                    <TableCell>Paid</TableCell>
+                    <TableCell>Credit Card</TableCell>
+                    <TableCell className="text-right" style={{ color: '#e41c38' }}>- $149.00</TableCell>
+                </TableRow>
+                <TableRow >
+                    <TableCell className="font-medium">From Savings</TableCell>
+                    <TableCell>Paid</TableCell>
+                    <TableCell>Wattson Bank</TableCell>
+                    <TableCell className="text-right" style={{ color: 'green' }}>+ $1500.00</TableCell>
+                </TableRow>
             </TableBody>
         </Table>
-    );
+
+    )
 }
 
-export default RTTable;
+export default RTTable
