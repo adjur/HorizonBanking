@@ -6,7 +6,8 @@ Welcome to my Horizon Banking repository!
 
 This project showcases a comprehensive banking app built using Next.js 14.
 
-See the live demo here: 
+See the live demo here:
+
  [Horizon Banking](https://horizon-banking-jade.vercel.app/)
 
 ## Features 🖊️
